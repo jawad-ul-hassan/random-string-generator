@@ -2,10 +2,7 @@ import { useState } from 'react';
 import { generateRandomString } from '../../util/util';
 
 const Home = () => {
-  const [result, setResult] = useState({
-    generatedString: '',
-    generatedStringLength: 0,
-  });
+  const [result, setResult] = useState('');
 
   const minLength = 16;
   const maxLength = 32;
@@ -76,22 +73,16 @@ const Home = () => {
 
       <div className="result">
         <h3 className="result-title">Generated Random String:</h3>
-        <p>{result.generatedString}</p>
+        <p>{result}</p>
       </div>
       <div className="range">
         <h3 className="range-title">Random String Strength:</h3>
         <div className="range-box">
           <span className="range-box-text">{minLength}</span>
-          <meter
-            value={result.generatedStringLength}
-            min={minLength}
-            max={maxLength}
-          />
+          <meter value={result.length} min={minLength} max={maxLength} />
           <span className="range-box-text">{maxLength}</span>
         </div>
-        <p className="range-text">
-          String Length: {result.generatedStringLength}
-        </p>
+        <p className="range-text">String Length: {result.length}</p>
       </div>
     </div>
   );

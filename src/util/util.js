@@ -13,8 +13,5 @@ export const generateRandomString = (type, minLength, maxLength) => {
     result += characters.charAt(randomIndex);
   }
 
-  return {
-    generatedString: result,
-    generatedStringLength: result.length,
-  };
+  return result;
 };
